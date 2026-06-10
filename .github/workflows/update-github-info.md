@@ -1,6 +1,5 @@
 ---
 name: update-github-info
----
 description: Draft website updates for Mona's GitHub Info website from official GitHub sources.
 on:
   workflow_dispatch:
@@ -18,6 +17,7 @@ network:
   allowed:
     - github.com
     - github.blog
+    - awesome-copilot.github.com
 ---
 
 # Update Mona's GitHub Info
@@ -28,6 +28,10 @@ Use these sources to update `site/content/github-info.md`:
 - Mona's internal notes: `notes/mona-notes.md`
 - GitHub Blog: https://github.blog/latest/
 - GitHub Changelog: https://github.blog/changelog/
+- awesome-copilot workflows: https://awesome-copilot.github.com/workflows/
+
+Use web fetch to read:
+- https://awesome-copilot.github.com/workflows/
 
 Update `site/content/github-info.md` with concise, accurate information for readers.
 Include a new section titled `## Latest GitHub Updates` if one does not already exist.
