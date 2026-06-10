@@ -19,3 +19,5 @@ Mona's website focuses on practical GitHub guidance backed by official reference
 
 - Keep an eye on the GitHub Blog for product announcements and practical developer guidance.
 - Review the GitHub Changelog for release notes that affect day-to-day workflows and automation.
+- GitHub now offers enhanced security insights directly in repository dashboards.
+
