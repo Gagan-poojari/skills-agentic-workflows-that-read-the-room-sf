@@ -32,6 +32,7 @@ Use these sources to update `site/content/github-info.md`:
 
 Use web fetch to read:
 - https://awesome-copilot.github.com/workflows/
+Include workflow examples and source context from the Awesome Copilot page when relevant.
 
 Update `site/content/github-info.md` with concise, accurate information for readers.
 Include a new section titled `## Latest GitHub Updates` if one does not already exist.
