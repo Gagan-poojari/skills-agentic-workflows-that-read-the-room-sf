@@ -1,0 +1,35 @@
+name: Daily Random Commits
+
+on:
+  schedule:
+    - cron: '0 12 * * *'  # runs at noon UTC daily
+  workflow_dispatch:       # manual trigger too
+
+jobs:
+  commit:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Configure git
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+
+      - name: Make random commits
+        run: |
+          COUNT=$((RANDOM % 5 + 1))  # 1 to 5
+          echo "Making $COUNT commits..."
+          for i in $(seq 1 $COUNT); do
+            echo "$(date)-$i" >> activity.log
+            git add activity.log
+            git commit -m "chore: daily activity [$i/$COUNT]"
+          done
+
+      - name: Push
+        run: git push
